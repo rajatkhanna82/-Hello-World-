@@ -13,9 +13,13 @@
 @end
 
 @implementation ViewController
+@synthesize theLabel, theTextField;
+
 
 - (void)viewDidLoad
 {
+    [theLabel setText:@"New Label"];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -25,5 +29,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)finished:(UITextField *)sender {
+    
+    
+    [sender resignFirstResponder];
+}
 
+- (IBAction)buttonPress:(id)sender {
+    [theLabel setText:theTextField.text];
+    
+}
 @end
